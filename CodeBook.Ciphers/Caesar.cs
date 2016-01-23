@@ -1,23 +1,52 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Caesar.cs" company="MadnessSolitions">
+//   Deus
+// </copyright>
+// <summary>
+//   The caesar.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace CodeBook.Ciphers
 {
+    using System;
+    using CodeBook.Ciphers.Interfaces;
+
+    /// <summary>
+    /// The caesar.
+    /// </summary>
     public class Caesar : ICipher
     {
-        private readonly int _shift;
-        private readonly char[] _alphabet;
+        /// <summary>
+        /// The shift.
+        /// </summary>
+        private readonly int shift;
 
+        /// <summary>
+        /// The Alphabet.
+        /// </summary>
+        private readonly char[] alphabet;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Caesar"/> class.
+        /// </summary>
+        /// <param name="alphabet">
+        /// The alphabet.
+        /// </param>
+        /// <param name="shift">
+        /// The shift.
+        /// </param>
         public Caesar(char[] alphabet, int shift = 2)
         {
-            _alphabet = alphabet;
-            _shift = shift;
+            this.alphabet = alphabet;
+            this.shift = shift;
         }
 
         /// <summary>
-        /// Encrypt message in plaintext
+        /// Encrypt message in plaintext.
         /// </summary>
-        /// <param name="plaintext">Message in plaintext</param>
-        /// <returns>Ciphertext</returns>
+        /// <param name="plaintext">Message in plaintext.</param>
+        /// <returns>A Ciphertext</returns>
         public string Encrypt(string plaintext)
         {
             string ciphertext = string.Empty;
@@ -28,17 +57,19 @@ namespace CodeBook.Ciphers
                     ciphertext += c;
                     continue;
                 }
-                int index = (Array.IndexOf(_alphabet, c) + _shift + _alphabet.Length) % _alphabet.Length;
-                ciphertext += _alphabet[index];
+
+                int index = (Array.IndexOf(this.alphabet, c) + this.shift + this.alphabet.Length) % this.alphabet.Length;
+                ciphertext += this.alphabet[index];
             }
+
             return ciphertext;
         }
 
         /// <summary>
         /// Decrypt ciphertext
         /// </summary>
-        /// <param name="ciphertext">Ciphertext</param>
-        /// <returns>Plaintext</returns>
+        /// <param name="ciphertext">A Ciphertext</param>
+        /// <returns>A Plaintext</returns>
         public string Decrypt(string ciphertext)
         {
             string plaintext = string.Empty;
@@ -49,9 +80,11 @@ namespace CodeBook.Ciphers
                     plaintext += c;
                     continue;
                 }
-                int index = (Array.IndexOf(_alphabet, c) - _shift + _alphabet.Length) % _alphabet.Length;
-                plaintext += _alphabet[index];
+
+                int index = (Array.IndexOf(this.alphabet, c) - this.shift + this.alphabet.Length) % this.alphabet.Length;
+                plaintext += this.alphabet[index];
             }
+
             return plaintext;
         }
     }

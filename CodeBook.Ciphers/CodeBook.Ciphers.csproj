@@ -43,7 +43,7 @@
     <Compile Include="Alphabet.cs" />
     <Compile Include="Caesar.cs" />
     <Compile Include="KeyedCaesar.cs" />
-    <Compile Include="ICipher.cs" />
+    <Compile Include="Interfaces\ICipher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vingenere.cs" />
   </ItemGroup>
