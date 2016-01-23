@@ -1,0 +1,11 @@
+/bin
+/packages
+[Bb]in
+[Oo]bj
+PrecompiledWeb
+AppPackages
+*.suo
+*.user
+log*.txt*
+_ReSharper.*
+project.lock.json
