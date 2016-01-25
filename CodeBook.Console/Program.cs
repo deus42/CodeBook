@@ -1,11 +1,30 @@
-﻿using System;
-using CodeBook.Ciphers;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Program.cs" company="MadnessSolutions">
+//   Deus
+// </copyright>
+// <summary>
+//   Defines the Program type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace CodeBook.Launcher
 {
-    class Program
+    using System;
+
+    using Ciphers;
+
+    /// <summary>
+    /// The program.
+    /// </summary>
+    internal static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main.
+        /// </summary>
+        /// <param name="args">
+        /// The args.
+        /// </param>
+        internal static void Main(string[] args)
         {
             var caesarCipher = new Caesar(Alphabet.English26, -22);
             Console.WriteLine("Please make a choice: E to encrypt, D to decrypt and X for exit");
@@ -30,15 +49,7 @@ namespace CodeBook.Launcher
                     case 'x':
                         return;
                 }
-
-
-
             }
         }
-
-
     }
-
-
-
 }

@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTest.cs" />
+    <Compile Include="CaesarTest.cs" />
     <Compile Include="ICipherTest.cs" />
     <Compile Include="KeyedCaesarTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
