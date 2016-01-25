@@ -9,9 +9,6 @@
 
 namespace CodeBook.Tests
 {
-    using System;
-    using System.Text.RegularExpressions;
-
     using CodeBook.Ciphers;
 
     using NUnit.Framework;
@@ -25,7 +22,7 @@ namespace CodeBook.Tests
         /// <summary>
         /// The ciphertext.
         /// </summary>
-        protected const string Ciphertext = "ilvnprrpjjkqrjnbqrplifn";
+        protected const string Ciphertext = "ilvnpr rpjjkq rj nbqr plifn";
 
         /// <summary>
         /// The encrypt test.
@@ -35,7 +32,7 @@ namespace CodeBook.Tests
         {
             var cipher = new KeyedCaesar(Alphabet.English26, Keyphrase);
             var ciphertext = cipher.Encrypt(Message);
-            Assert.AreEqual(ciphertext, Ciphertext);
+            Assert.AreEqual(Ciphertext, ciphertext);
         }
 
         /// <summary>
@@ -46,8 +43,7 @@ namespace CodeBook.Tests
         {
             var cipher = new KeyedCaesar(Alphabet.English26, Keyphrase);
             var plaintext = cipher.Decrypt(Ciphertext);
-            var noWhitespacesMessage = Regex.Replace(Message, @"\s+", string.Empty);
-            Assert.AreEqual(plaintext, noWhitespacesMessage);
+            Assert.AreEqual(Message, plaintext);
         }
     }
 }

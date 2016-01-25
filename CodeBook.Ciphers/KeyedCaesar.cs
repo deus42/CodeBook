@@ -70,6 +70,7 @@ namespace CodeBook.Ciphers
             {
                 if (char.IsWhiteSpace(symbol))
                 {
+                    ciphertext += symbol;
                     continue;
                 }
 
@@ -93,6 +94,7 @@ namespace CodeBook.Ciphers
             {
                 if (char.IsWhiteSpace(symbol))
                 {
+                    plaintext += symbol;
                     continue;
                 }
 
