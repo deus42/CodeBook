@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBook.Ciphers", "CodeBoo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBook.Tests", "CodeBook.Tests\CodeBook.Tests.csproj", "{2F375645-7DFD-4632-9C83-02ED4BF0F73E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBook.Languages", "CodeBook.Languages\CodeBook.Languages.csproj", "{F1CD1C19-A2CD-4D9A-8E09-60791255BA36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBook.Cryptoanalysis", "CodeBook.Cryptoanalysis\CodeBook.Cryptoanalysis.csproj", "{DE1A6239-90FD-45DC-9128-B59E520160C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{2F375645-7DFD-4632-9C83-02ED4BF0F73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F375645-7DFD-4632-9C83-02ED4BF0F73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F375645-7DFD-4632-9C83-02ED4BF0F73E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1CD1C19-A2CD-4D9A-8E09-60791255BA36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1CD1C19-A2CD-4D9A-8E09-60791255BA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1CD1C19-A2CD-4D9A-8E09-60791255BA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1CD1C19-A2CD-4D9A-8E09-60791255BA36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1A6239-90FD-45DC-9128-B59E520160C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1A6239-90FD-45DC-9128-B59E520160C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1A6239-90FD-45DC-9128-B59E520160C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1A6239-90FD-45DC-9128-B59E520160C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

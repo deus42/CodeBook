@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeBook.Tests
+namespace CodeBook.Cryptoanalysis
 {
-    interface ICipherTest
+    public class CaesarCryptoanalysis
     {
 
     }

@@ -7,26 +7,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using CodeBook.Ciphers.Interfaces;
+
 namespace CodeBook.Ciphers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-
-    using CodeBook.Ciphers.Interfaces;
-
     /// <summary>
-    /// The keyed Сaesar cipher.
+    ///     The keyed Сaesar cipher.
     /// </summary>
     public class KeyedCaesar : ICipher
     {
         /// <summary>
-        /// The cipher dictionary.
+        ///     The cipher dictionary.
         /// </summary>
         private readonly Dictionary<char, char> cipherDictionary = new Dictionary<char, char>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="KeyedCaesar"/> class.
+        ///     Initializes a new instance of the <see cref="KeyedCaesar" /> class.
         /// </summary>
         /// <param name="alphabet">The alphabet.</param>
         /// <param name="keyphrase">The keyphrase.</param>
@@ -52,20 +51,20 @@ namespace CodeBook.Ciphers
                 throw new FormatException("Alphabet doesn't contain all symbols from the keyphrase!");
             }
 
-            for (int i = 0; i < alphabet.Length; i++)
+            for (var i = 0; i < alphabet.Length; i++)
             {
                 this.cipherDictionary.Add(alphabet[i], cipheralphabet[i]);
             }
         }
 
         /// <summary>
-        /// Encrypt plaintext.
+        ///     Encrypt plaintext.
         /// </summary>
         /// <param name="plaintext"> The plaintext. </param>
-        /// <returns>Ciphertext <see cref="string"/>. </returns>
+        /// <returns>Ciphertext <see cref="string" />. </returns>
         public string Encrypt(string plaintext)
         {
-            string ciphertext = string.Empty;
+            var ciphertext = string.Empty;
             foreach (var symbol in plaintext)
             {
                 if (char.IsWhiteSpace(symbol))
@@ -81,15 +80,15 @@ namespace CodeBook.Ciphers
         }
 
         /// <summary>
-        /// The decrypt.
+        ///     The decrypt.
         /// </summary>
         /// <param name="ciphertext">The ciphertext.</param>
         /// <returns>
-        /// Plaintext <see cref="string"/>.
+        ///     Plaintext <see cref="string" />.
         /// </returns>
         public string Decrypt(string ciphertext)
         {
-            string plaintext = string.Empty;
+            var plaintext = string.Empty;
             foreach (var symbol in ciphertext)
             {
                 if (char.IsWhiteSpace(symbol))

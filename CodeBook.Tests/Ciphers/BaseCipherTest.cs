@@ -1,43 +1,42 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="BaseTest.cs" company="MadnessSolutions">
+// <copyright file="BaseCipherTest.cs" company="MadnessSolutions">
 //   Deus
 // </copyright>
 // <summary>
-//   Defines the BaseTest type.
+//   Defines the BaseCipherTest type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace CodeBook.Tests
+namespace CodeBook.Tests.Ciphers
 {
     /// <summary>
-    /// The base test.
+    ///     The base test.
     /// </summary>
-    public abstract class BaseTest
+    public abstract class BaseCipherTest
     {
         /// <summary>
-        /// The keyphrase.
+        ///     The keyphrase.
         /// </summary>
         protected const string Keyphrase = "businafasol";
 
         /// <summary>
-        /// The keyword.
+        ///     The keyword.
         /// </summary>
         protected const string Keyword = "white";
 
         /// <summary>
-        /// The message.
+        ///     The message.
         /// </summary>
         protected const string Message = "divert troops to east ridge";
 
         /// <summary>
-        /// The encrypt test.
+        ///     The encrypt test.
         /// </summary>
         public abstract void EncryptTest();
 
         /// <summary>
-        /// The decrypt test.
+        ///     The decrypt test.
         /// </summary>
         public abstract void DecryptTest();
-
     }
 }

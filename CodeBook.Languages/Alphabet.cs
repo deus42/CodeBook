@@ -7,15 +7,15 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace CodeBook.Ciphers
+namespace CodeBook.Languages
 {
     /// <summary>
-    /// The alphabet.
+    ///     The alphabet.
     /// </summary>
     public static class Alphabet
     {
         /// <summary>
-        /// The English lowerace 26 letters.
+        ///     The English lowerace 26 letters.
         /// </summary>
         public static readonly char[] English26 = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
     }

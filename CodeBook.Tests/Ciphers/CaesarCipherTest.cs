@@ -1,47 +1,36 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CaesarTest.cs" company="MadnessSolutions">
+// <copyright file="CaesarCipherTest.cs" company="MadnessSolutions">
 //   Deus
 // </copyright>
 // <summary>
-//   Defines the CaesarTest type.
+//   Defines the CaesarCipherTest type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace CodeBook.Tests
+using CodeBook.Ciphers;
+using CodeBook.Languages;
+using NUnit.Framework;
+
+namespace CodeBook.Tests.Ciphers
 {
-    using CodeBook.Ciphers;
-
-    using NUnit.Framework;
-
     /// <summary>
-    /// The Caesar cipher test.
+    ///     The Caesar cipher test.
     /// </summary>
     [TestFixture]
-    public class CaesarTest : BaseTest
+    public class CaesarCipherTest : BaseCipherTest
     {
         /// <summary>
-        /// The ciphertext.
+        ///     The ciphertext.
         /// </summary>
         protected const string Ciphertext = "inajwy ywttux yt jfxy wnilj";
 
         /// <summary>
-        /// The shift.
+        ///     The shift.
         /// </summary>
         protected const int Shift = 5;
 
         /// <summary>
-        /// The encrypt test.
-        /// </summary>
-        [Test]
-        public override void EncryptTest()
-        {
-            var cipher = new Caesar(Alphabet.English26, Shift);
-            var ciphertext = cipher.Encrypt(Message);
-            Assert.AreEqual(Ciphertext, ciphertext);
-        }
-
-        /// <summary>
-        /// The decrypt test.
+        ///     The decrypt test.
         /// </summary>
         [Test]
         public override void DecryptTest()
@@ -49,6 +38,17 @@ namespace CodeBook.Tests
             var cipher = new Caesar(Alphabet.English26, Shift);
             var plaintext = cipher.Decrypt(Ciphertext);
             Assert.AreEqual(Message, plaintext);
+        }
+
+        /// <summary>
+        ///     The encrypt test.
+        /// </summary>
+        [Test]
+        public override void EncryptTest()
+        {
+            var cipher = new Caesar(Alphabet.English26, Shift);
+            var ciphertext = cipher.Encrypt(Message);
+            Assert.AreEqual(Ciphertext, ciphertext);
         }
     }
 }

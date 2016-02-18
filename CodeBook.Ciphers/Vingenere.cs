@@ -7,54 +7,53 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+using CodeBook.Ciphers.Interfaces;
+
 namespace CodeBook.Ciphers
 {
-    using System;
-    using System.Linq;
-    using System.Text.RegularExpressions;
-
-    using CodeBook.Ciphers.Interfaces;
-
     /// <summary>
-    /// The Vingenere cipher.
+    ///     The Vingenere cipher.
     /// </summary>
     public class Vingenere : ICipher
     {
         /// <summary>
-        /// The matrix.
-        /// </summary>
-        private readonly char[][] matrix;
-
-        /// <summary>
-        /// The keyword.
-        /// </summary>
-        private readonly string keyword;
-
-        /// <summary>
-        /// The alphabet.
+        ///     The alphabet.
         /// </summary>
         private readonly char[] alphabet;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Vingenere"/> class.
+        ///     The keyword.
+        /// </summary>
+        private readonly string keyword;
+
+        /// <summary>
+        ///     The matrix.
+        /// </summary>
+        private readonly char[][] matrix;
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Vingenere" /> class.
         /// </summary>
         /// <param name="alphabet">The alphabet.</param>
         /// <param name="keyword">The keyword.</param>
         public Vingenere(char[] alphabet, string keyword)
         {
             var key = keyword.Distinct().ToList();
-            int x = alphabet.Length;
-            int y = key.Count;
-            int c = 0;
+            var x = alphabet.Length;
+            var y = key.Count;
+            var c = 0;
             this.matrix = new char[y][];
-            for (int i = 0; i < x; i++)
+            for (var i = 0; i < x; i++)
             {
                 if (key.Contains(alphabet[i]))
                 {
                     this.matrix[c] = new char[x];
-                    for (int j = 0; j < x; j++)
+                    for (var j = 0; j < x; j++)
                     {
-                        int index = (i + j) % x;
+                        var index = (i + j)%x;
                         this.matrix[c][j] = alphabet[index];
                     }
 
@@ -67,22 +66,22 @@ namespace CodeBook.Ciphers
         }
 
         /// <summary>
-        /// The encrypt.
+        ///     The encrypt.
         /// </summary>
         /// <param name="plaintext">A plaintext.</param>
         /// <returns>
-        /// Ciphertext <see cref="string"/>.
+        ///     Ciphertext <see cref="string" />.
         /// </returns>
         public string Encrypt(string plaintext)
         {
-            string ciphertext = string.Empty;
+            var ciphertext = string.Empty;
             plaintext = Regex.Replace(plaintext, @"\s+", string.Empty);
-            for (int i = 0; i < plaintext.Length; i++)
+            for (var i = 0; i < plaintext.Length; i++)
             {
-                for (int j = 0; j < this.keyword.Length; j++)
+                for (var j = 0; j < this.keyword.Length; j++)
                 {
                     // we found a row
-                    if (this.matrix[j][0] == this.keyword[i % this.keyword.Length])
+                    if (this.matrix[j][0] == this.keyword[i%this.keyword.Length])
                     {
                         var charIndex = Array.IndexOf(this.alphabet, plaintext[i]);
                         ciphertext += this.matrix[j][charIndex];
@@ -94,21 +93,21 @@ namespace CodeBook.Ciphers
         }
 
         /// <summary>
-        /// The decrypt.
+        ///     The decrypt.
         /// </summary>
         /// <param name="ciphertext">A Ciphertext.</param>
         /// <returns>
-        /// A plaintext <see cref="string"/>.
+        ///     A plaintext <see cref="string" />.
         /// </returns>
         public string Decrypt(string ciphertext)
         {
-            string plaintext = string.Empty;
+            var plaintext = string.Empty;
 
-            for (int i = 0; i < ciphertext.Length; i++)
+            for (var i = 0; i < ciphertext.Length; i++)
             {
-                for (int j = 0; j < this.keyword.Length; j++)
+                for (var j = 0; j < this.keyword.Length; j++)
                 {
-                    if (this.matrix[j][0] == this.keyword[i % this.keyword.Length])
+                    if (this.matrix[j][0] == this.keyword[i%this.keyword.Length])
                     {
                         // we found a row
                         var charIndex = Array.IndexOf(this.matrix[j], ciphertext[i]);

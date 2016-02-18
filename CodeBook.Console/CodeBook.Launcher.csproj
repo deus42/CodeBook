@@ -54,6 +54,10 @@
       <Project>{431C8415-5D54-4F95-A88D-5E6480C577C7}</Project>
       <Name>CodeBook.Ciphers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CodeBook.Languages\CodeBook.Languages.csproj">
+      <Project>{F1CD1C19-A2CD-4D9A-8E09-60791255BA36}</Project>
+      <Name>CodeBook.Languages</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

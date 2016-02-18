@@ -7,22 +7,22 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
+using CodeBook.Ciphers;
+using CodeBook.Languages;
+
 namespace CodeBook.Launcher
 {
-    using System;
-
-    using Ciphers;
-
     /// <summary>
-    /// The program.
+    ///     The program.
     /// </summary>
     internal static class Program
     {
         /// <summary>
-        /// The main.
+        ///     The main.
         /// </summary>
         /// <param name="args">
-        /// The args.
+        ///     The args.
         /// </param>
         internal static void Main(string[] args)
         {
