@@ -26,7 +26,7 @@ namespace CodeBook.Launcher
         /// </param>
         internal static void Main(string[] args)
         {
-            var caesarCipher = new Caesar(Alphabet.English26, -22);
+            var caesarCipher = new Caesar(Alphabets.English26, -22);
             Console.WriteLine("Please make a choice: E to encrypt, D to decrypt and X for exit");
             while (true)
             {

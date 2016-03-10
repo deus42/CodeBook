@@ -1,9 +1,9 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Alphabet.cs" company="MadnessSolutions">
+// <copyright file="Alphabets.cs" company="MadnessSolutions">
 //   Deus
 // </copyright>
 // <summary>
-//   Defines the Alphabet type.
+//   Defines the Alphabets type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ namespace CodeBook.Languages
     /// <summary>
     ///     The alphabet.
     /// </summary>
-    public static class Alphabet
+    public static class Alphabets
     {
         /// <summary>
         ///     The English lowerace 26 letters.

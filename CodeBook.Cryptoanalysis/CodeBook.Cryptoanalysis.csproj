@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CaesarCryptoanalysis.cs" />
     <Compile Include="FitnessFunction.cs" />
+    <Compile Include="KeyedCaesarCryptoanalysis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

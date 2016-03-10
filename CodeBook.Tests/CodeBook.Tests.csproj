@@ -48,6 +48,7 @@
     <Compile Include="Ciphers\CaesarCipherTest.cs" />
     <Compile Include="Ciphers\KeyedCaesarCipherTest.cs" />
     <Compile Include="Cryptoanalysis\BaseCryptoanalysisTest.cs" />
+    <Compile Include="Cryptoanalysis\KeyedCaesarCryptoanalysisTest.cs" />
     <Compile Include="Cryptoanalysis\CaesarCryptoanalysisTest.cs" />
     <Compile Include="Ciphers\PlayfairCipherTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

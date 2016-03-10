@@ -30,7 +30,7 @@ namespace CodeBook.Tests.Ciphers
         [Test]
         public override void DecryptTest()
         {
-            var cipher = new KeyedCaesar(Alphabet.English26, Keyphrase);
+            var cipher = new KeyedCaesar(Alphabets.English26, Keyphrase);
             var plaintext = cipher.Decrypt(Ciphertext);
             Assert.AreEqual(Message, plaintext);
         }
@@ -41,7 +41,7 @@ namespace CodeBook.Tests.Ciphers
         [Test]
         public override void EncryptTest()
         {
-            var cipher = new KeyedCaesar(Alphabet.English26, Keyphrase);
+            var cipher = new KeyedCaesar(Alphabets.English26, Keyphrase);
             var ciphertext = cipher.Encrypt(Message);
             Assert.AreEqual(Ciphertext, ciphertext);
         }

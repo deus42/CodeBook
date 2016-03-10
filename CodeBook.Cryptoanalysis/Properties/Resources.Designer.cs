@@ -107,5 +107,14 @@ namespace CodeBook.Cryptoanalysis.Properties {
                 return ResourceManager.GetString("english_quadgrams", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fitness function support only English language for now..
+        /// </summary>
+        internal static string OnlyEnglishLanguageSupported {
+            get {
+                return ResourceManager.GetString("OnlyEnglishLanguageSupported", resourceCulture);
+            }
+        }
     }
 }

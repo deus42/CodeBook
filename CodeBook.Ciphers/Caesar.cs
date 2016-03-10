@@ -18,7 +18,7 @@ namespace CodeBook.Ciphers
     public class Caesar : ICipher
     {
         /// <summary>
-        ///     The Alphabet.
+        ///     The Alphabets.
         /// </summary>
         private readonly char[] alphabet;
 

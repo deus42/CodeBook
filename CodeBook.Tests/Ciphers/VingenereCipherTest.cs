@@ -31,7 +31,7 @@ namespace CodeBook.Tests.Ciphers
         [Test]
         public override void DecryptTest()
         {
-            var vingenere = new Vingenere(Alphabet.English26, Keyword);
+            var vingenere = new Vingenere(Alphabets.English26, Keyword);
             var plaintext = vingenere.Decrypt(Ciphertext);
             var messageWithoutWhitespaces = Regex.Replace(Message, @"\s+", string.Empty);
             Assert.AreEqual(messageWithoutWhitespaces, plaintext);
@@ -43,7 +43,7 @@ namespace CodeBook.Tests.Ciphers
         [Test]
         public override void EncryptTest()
         {
-            var vingenere = new Vingenere(Alphabet.English26, Keyword);
+            var vingenere = new Vingenere(Alphabets.English26, Keyword);
             var ciphertext = vingenere.Encrypt(Message);
             Assert.AreEqual(Ciphertext, ciphertext);
         }

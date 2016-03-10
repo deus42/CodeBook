@@ -35,7 +35,7 @@ namespace CodeBook.Ciphers
         {
             if (alphabet == null || alphabet.Length == 0)
             {
-                throw new FormatException("Alphabet is not well formed or empty!");
+                throw new FormatException("Alphabets is not well formed or empty!");
             }
 
             if (string.IsNullOrEmpty(keyphrase))
@@ -48,7 +48,7 @@ namespace CodeBook.Ciphers
 
             if (alphabet.Length != cipheralphabet.Length)
             {
-                throw new FormatException("Alphabet doesn't contain all symbols from the keyphrase!");
+                throw new FormatException("Alphabets doesn't contain all symbols from the keyphrase!");
             }
 
             for (var i = 0; i < alphabet.Length; i++)

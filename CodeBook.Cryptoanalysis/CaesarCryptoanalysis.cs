@@ -18,21 +18,21 @@ namespace CodeBook.Cryptoanalysis
             {
                 this.language = new English();
             }
-            this.fitnessFunction = new FitnessFunction();
+            this.fitnessFunction = new FitnessFunction(this.language);
         }
 
         /// <summary>
-        /// Cryptoanalyse a ciphertext 
+        /// Cryptoanalyse a ciphertext.
         /// </summary>
         /// <param name="ciphertext">Ciphertext to analyse.</param>
-        /// <returns>Plaintext</returns>
+        /// <returns>Plaintext.</returns>
         public string Process(string ciphertext)
         {
             var fitnesses = new Dictionary<int, double>();
-            for (int i = 0; i < 26; i++)
+            for (int i = 0; i < this.language.Alphabet.Length; i++)
             {
                 var text = this.language.RotateText(ciphertext, i);
-                var fitness = this.fitnessFunction.CalculateQuadgramFitness(text);
+                var fitness = this.fitnessFunction.Score(text);
                 fitnesses.Add(i, fitness);
             }
             var max = fitnesses.Values.Max();

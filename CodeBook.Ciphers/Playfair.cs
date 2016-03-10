@@ -19,7 +19,7 @@ namespace CodeBook.Ciphers
         public Playfair(string keyword)
         {
             var key = keyword.Distinct().Where(c => c != 'j').ToList();
-            var alphabet = key.Concat(Alphabet.English26.Where(c => c != 'j').Except(key)).ToArray();
+            var alphabet = key.Concat(Alphabets.English26.Where(c => c != 'j').Except(key)).ToArray();
             if (alphabet.Length != AlphabetCount)
             {
                 throw new ArgumentException($"Alphabet should be {AlphabetCount} length!");
