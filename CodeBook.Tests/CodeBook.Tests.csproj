@@ -47,7 +47,8 @@
     <Compile Include="Ciphers\BaseCipherTest.cs" />
     <Compile Include="Ciphers\CaesarCipherTest.cs" />
     <Compile Include="Ciphers\KeyedCaesarCipherTest.cs" />
-    <Compile Include="Languages\SpellCheckTest.cs" />
+    <Compile Include="Cryptoanalysis\BaseCryptoanalysisTest.cs" />
+    <Compile Include="Cryptoanalysis\CaesarCryptoanalysisTest.cs" />
     <Compile Include="Ciphers\PlayfairCipherTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ciphers\VingenereCipherTest.cs" />
@@ -60,10 +61,17 @@
       <Project>{431C8415-5D54-4F95-A88D-5E6480C577C7}</Project>
       <Name>CodeBook.Ciphers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CodeBook.Cryptoanalysis\CodeBook.Cryptoanalysis.csproj">
+      <Project>{DE1A6239-90FD-45DC-9128-B59E520160C3}</Project>
+      <Name>CodeBook.Cryptoanalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CodeBook.Languages\CodeBook.Languages.csproj">
       <Project>{F1CD1C19-A2CD-4D9A-8E09-60791255BA36}</Project>
       <Name>CodeBook.Languages</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Languages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
