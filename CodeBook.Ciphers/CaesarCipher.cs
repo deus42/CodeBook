@@ -1,21 +1,20 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Caesar.cs" company="MadnessSolitions">
+// <copyright file="CaesarCipher.cs" company="MadnessSolitions">
 //   Deus
 // </copyright>
 // <summary>
-//   Caesar cipher implementation.
+//   CaesarCipher cipher implementation.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
-using CodeBook.Ciphers.Interfaces;
 
 namespace CodeBook.Ciphers
 {
     /// <summary>
     ///     The caesar.
     /// </summary>
-    public class Caesar : ICipher
+    public class CaesarCipher : ICipher
     {
         /// <summary>
         ///     The Alphabets.
@@ -28,11 +27,11 @@ namespace CodeBook.Ciphers
         private readonly int shift;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="Caesar" /> class.
+        ///     Initializes a new instance of the <see cref="CaesarCipher" /> class.
         /// </summary>
         /// <param name="alphabet">The alphabet. </param>
         /// <param name="shift">The shift. </param>
-        public Caesar(char[] alphabet, int shift = 2)
+        public CaesarCipher(char[] alphabet, int shift = 2)
         {
             this.alphabet = alphabet;
             this.shift = shift;

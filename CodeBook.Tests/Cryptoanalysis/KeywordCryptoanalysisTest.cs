@@ -5,14 +5,14 @@ using NUnit.Framework;
 namespace CodeBook.Tests.Cryptoanalysis
 {
     [TestFixture]
-    public class KeyedCaesarCryptoanalysisTest : BaseCryptoanalysisTest
+    public class KeywordCryptoanalysisTest : BaseCryptoanalysisTest
     {
         protected const string Ciphertext = "ilvnprrpjjkqrjnbqrplifn";
 
         [Test]
-        public void KeyedCaesarCryptoanalisysTest()
+        public void KeywordCryptoanalysis()
         {
-            var caesarCryptoanalysis = new KeyedCaesarCryptoanalysis();
+            var caesarCryptoanalysis = new KeywordCryptoanalysis();
             var plaintext = caesarCryptoanalysis.Process(Ciphertext);
             Assert.AreEqual(plaintext, Message.Replace(" ", ""));
         }

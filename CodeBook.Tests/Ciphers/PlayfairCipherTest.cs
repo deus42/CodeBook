@@ -12,7 +12,7 @@ namespace CodeBook.Tests.Ciphers
         [Test]
         public override void EncryptTest()
         {
-            var playfair = new Playfair(Keyword);
+            var playfair = new PlayfairCipher(Keyword);
             var ciphertext = playfair.Encrypt(Message);
             Assert.AreEqual(ciphertext, this.Ciphertext);
         }

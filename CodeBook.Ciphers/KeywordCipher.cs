@@ -1,23 +1,22 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="KeyedCaesar.cs" company="MadnessSolitions">
+// <copyright file="KeywordCipher.cs" company="MadnessSolitions">
 //   Deus
 // </copyright>
 // <summary>
-//   Defines the KeyedCaesar type.
+//   Defines the KeywordCipher type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CodeBook.Ciphers.Interfaces;
 
 namespace CodeBook.Ciphers
 {
     /// <summary>
     ///     The keyed Сaesar cipher.
     /// </summary>
-    public class KeyedCaesar : ICipher
+    public class KeywordCipher : ICipher
     {
         /// <summary>
         ///     The cipher dictionary.
@@ -25,13 +24,13 @@ namespace CodeBook.Ciphers
         private readonly Dictionary<char, char> cipherDictionary = new Dictionary<char, char>();
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="KeyedCaesar" /> class.
+        ///     Initializes a new instance of the <see cref="KeywordCipher" /> class.
         /// </summary>
         /// <param name="alphabet">The alphabet.</param>
         /// <param name="keyphrase">The keyphrase.</param>
         /// <param name="shift">The shift. </param>
         /// <exception cref="FormatException">Format exception.</exception>
-        public KeyedCaesar(char[] alphabet, string keyphrase, int shift = 0)
+        public KeywordCipher(char[] alphabet, string keyphrase, int shift = 0)
         {
             if (alphabet == null || alphabet.Length == 0)
             {

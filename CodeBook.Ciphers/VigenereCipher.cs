@@ -1,23 +1,22 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Vingenere.cs" company="MadnessSolutions">
+// <copyright file="VigenereCipher.cs" company="MadnessSolutions">
 //   Deus
 // </copyright>
 // <summary>
-//   Defines the Vingenere type.
+//   Defines the VigenereCipher type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
-using CodeBook.Ciphers.Interfaces;
 
 namespace CodeBook.Ciphers
 {
     /// <summary>
     ///     The Vingenere cipher.
     /// </summary>
-    public class Vingenere : ICipher
+    public class VigenereCipher : ICipher
     {
         /// <summary>
         ///     The alphabet.
@@ -35,11 +34,11 @@ namespace CodeBook.Ciphers
         private readonly char[][] matrix;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="Vingenere" /> class.
+        ///     Initializes a new instance of the <see cref="VigenereCipher" /> class.
         /// </summary>
         /// <param name="alphabet">The alphabet.</param>
         /// <param name="keyword">The keyword.</param>
-        public Vingenere(char[] alphabet, string keyword)
+        public VigenereCipher(char[] alphabet, string keyword)
         {
             var key = keyword.Distinct().ToList();
             var x = alphabet.Length;

@@ -14,7 +14,7 @@ using NUnit.Framework;
 namespace CodeBook.Tests.Ciphers
 {
     /// <summary>
-    ///     The Caesar cipher test.
+    ///     The CaesarCipher cipher test.
     /// </summary>
     [TestFixture]
     public class CaesarCipherTest : BaseCipherTest
@@ -35,7 +35,7 @@ namespace CodeBook.Tests.Ciphers
         [Test]
         public override void DecryptTest()
         {
-            var cipher = new Caesar(Alphabets.English26, Shift);
+            var cipher = new CaesarCipher(Alphabets.English26, Shift);
             var plaintext = cipher.Decrypt(Ciphertext);
             Assert.AreEqual(Message, plaintext);
         }
@@ -46,7 +46,7 @@ namespace CodeBook.Tests.Ciphers
         [Test]
         public override void EncryptTest()
         {
-            var cipher = new Caesar(Alphabets.English26, Shift);
+            var cipher = new CaesarCipher(Alphabets.English26, Shift);
             var ciphertext = cipher.Encrypt(Message);
             Assert.AreEqual(Ciphertext, ciphertext);
         }

@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace CodeBook.Ciphers.Interfaces
+namespace CodeBook.Ciphers
 {
     /// <summary>
     ///     The Cipher interface.

@@ -1,9 +1,9 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="KeyedCaesarCipherTest.cs" company="MadnessSolutions">
+// <copyright file="KeywordCipherTest.cs" company="MadnessSolutions">
 //   Deus
 // </copyright>
 // <summary>
-//   Defines the KeyedCaesarCipherTest type.
+//   Defines the KeywordCipherTest type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ namespace CodeBook.Tests.Ciphers
     ///     The keyed caesar test.
     /// </summary>
     [TestFixture]
-    public class KeyedCaesarCipherTest : BaseCipherTest
+    public class KeywordCipherTest : BaseCipherTest
     {
         /// <summary>
         ///     The ciphertext.
@@ -30,7 +30,7 @@ namespace CodeBook.Tests.Ciphers
         [Test]
         public override void DecryptTest()
         {
-            var cipher = new KeyedCaesar(Alphabets.English26, Keyphrase);
+            var cipher = new KeywordCipher(Alphabets.English26, Keyphrase);
             var plaintext = cipher.Decrypt(Ciphertext);
             Assert.AreEqual(Message, plaintext);
         }
@@ -41,7 +41,7 @@ namespace CodeBook.Tests.Ciphers
         [Test]
         public override void EncryptTest()
         {
-            var cipher = new KeyedCaesar(Alphabets.English26, Keyphrase);
+            var cipher = new KeywordCipher(Alphabets.English26, Keyphrase);
             var ciphertext = cipher.Encrypt(Message);
             Assert.AreEqual(Ciphertext, ciphertext);
         }
